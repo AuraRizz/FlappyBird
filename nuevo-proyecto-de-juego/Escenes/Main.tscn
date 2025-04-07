@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd07sl0exvp7v"]
+
+[ext_resource type="Script" uid="uid://ctya8ra76a2pn" path="res://Escenes/main.gd" id="1_edo2l"]
+[ext_resource type="PackedScene" uid="uid://dh6b6tbjs3g0p" path="res://Escenes/mur.tscn" id="1_p8wuh"]
+[ext_resource type="PackedScene" uid="uid://bv5labqrx41kw" path="res://Escenes/Jugador.tscn" id="2_mwxei"]
+[ext_resource type="Script" uid="uid://ciiyg23gnfxv5" path="res://Scripts/mur.gd" id="4_hrf8d"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_edo2l")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_mwxei")]
+scale = Vector2(0.0400004, 0.0400004)
+
+[node name="Nous_Murs" type="Node2D" parent="."]
+
+[node name="Mur" parent="Nous_Murs" instance=ExtResource("1_p8wuh")]
+position = Vector2(300, 300)
+script = ExtResource("4_hrf8d")

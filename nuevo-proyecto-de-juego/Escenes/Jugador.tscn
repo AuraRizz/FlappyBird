@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv5labqrx41kw"]
+
+[ext_resource type="Script" uid="uid://csy7ov7sob51f" path="res://Escenes/jugador.gd" id="1_0khgs"]
+[ext_resource type="Texture2D" uid="uid://bylo2bqdr5b07" path="res://Flappy-Bird-PNG-ara si.png" id="1_hx2ax"]
+[ext_resource type="Texture2D" uid="uid://c8nqbsmef0iip" path="res://Flappy-Bird-PNG-Transparent-Picture Prova 2.png" id="3_r46xu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ppagg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hx2ax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_r46xu")
+}],
+"loop": true,
+"name": &"Volar",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hx2ax")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0khgs"]
+radius = 756.0
+height = 1762.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_0khgs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ppagg")
+animation = &"Volar"
+frame = 1
+frame_progress = 0.250331
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, -9)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_0khgs")
+
+[node name="Camera2D" type="Camera2D" parent="."]
