@@ -19,3 +19,6 @@ func animacio():
 		animacio_jugador.play("Volar")
 	else:
 		animacio_jugador.play("default")
+
+func has_passat():
+	print("He passat")

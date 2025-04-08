@@ -10,6 +10,9 @@ var num_murs_inicials = 5
 
 func _ready():
 	print("ready")
+	var mur = escena_mur.instantiate()
+	for i in num_murs_inicials:
+		crea_mur()
 
 func _process(delta):
 	for mur in nous_murs.get_children():
@@ -24,9 +27,8 @@ func crea_mur():
 		if mur.position.x > mur_mes_dreta_x:
 			mur_mes_dreta_x = mur.position.x
 
-	# Crea un mur a l'extrem dret
 	var nova_posicio_x = mur_mes_dreta_x + distancia_entre_murs
 	var mur = escena_mur.instantiate()
-	mur.position = Vector2(nova_posicio_x, randf_range(200, 400))  
+	mur.position = Vector2(nova_posicio_x, randf_range(100, 500))  
 	nous_murs.add_child(mur)
 	
