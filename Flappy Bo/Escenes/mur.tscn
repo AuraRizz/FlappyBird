@@ -10,12 +10,12 @@ size = Vector2(85, 330.5)
 size = Vector2(229, 733)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r55nx"]
-size = Vector2(217, 714)
+size = Vector2(229.576, 724.857)
 
 [node name="Mur" type="StaticBody2D"]
 
 [node name="Mur Baix" type="Node2D" parent="."]
-scale = Vector2(0.56, 0.56)
+scale = Vector2(0.387672, 0.56)
 
 [node name="Sprite2D3" type="Sprite2D" parent="Mur Baix"]
 position = Vector2(0, 714)
@@ -28,7 +28,7 @@ scale = Vector2(0.560547, 1)
 texture = ExtResource("1_3p5r2")
 
 [node name="Mur Dalt" type="Node2D" parent="."]
-scale = Vector2(0.56, 0.56)
+scale = Vector2(0.387672, 0.56)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Mur Dalt"]
 position = Vector2(0, -359)
@@ -41,6 +41,7 @@ scale = Vector2(0.56, 1)
 texture = ExtResource("1_3p5r2")
 
 [node name="Area puntuació" type="Area2D" parent="."]
+scale = Vector2(0.692271, 1)
 script = ExtResource("2_axd3w")
 
 [node name="Colisió" type="CollisionShape2D" parent="Area puntuació"]
@@ -50,12 +51,12 @@ shape = SubResource("RectangleShape2D_axd3w")
 
 [node name="Colisio Baix" type="CollisionShape2D" parent="."]
 position = Vector2(4.76837e-07, 299)
-scale = Vector2(0.56, 0.56)
+scale = Vector2(0.387672, 0.56)
 shape = SubResource("RectangleShape2D_631hj")
 
 [node name="Colisio Dalt" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -305)
-scale = Vector2(0.56, 0.56)
+position = Vector2(0.5, -301.96)
+scale = Vector2(0.387672, 0.56)
 shape = SubResource("RectangleShape2D_r55nx")
 
 [connection signal="body_entered" from="Area puntuació" to="Area puntuació" method="_on_body_entered"]

@@ -16,3 +16,16 @@ scale = Vector2(0.0400004, 0.0400004)
 [node name="Mur" parent="Nous_Murs" instance=ExtResource("1_p8wuh")]
 position = Vector2(300, 300)
 script = ExtResource("4_hrf8d")
+
+[node name="Puntuació" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -138.0
+offset_top = -93.0
+offset_right = 161.0
+offset_bottom = -38.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "PUNTUACIÓ = 0"

@@ -4,7 +4,7 @@ extends Node2D
 @onready var nous_murs = $Nous_Murs
 @export var escena_mur = preload("res://Escenes/mur.tscn")
 
-var velocitat_scroll = 200
+var velocitat_scroll = 250
 var distancia_entre_murs = 300
 var num_murs_inicials = 5
 

@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 var gravetat := Vector2.DOWN * 988
-var SALTS := -400
+var SALTS := -500
 var velocitat = 0
+var punts = 0
 @onready var animacio_jugador = $AnimatedSprite2D
 
 func _process(delta: float) -> void:
@@ -22,3 +23,5 @@ func animacio():
 
 func has_passat():
 	print("He passat")
+	punts += 1
+	$"../Puntuació".text = "PUNTUACIÓ:" + str(punts)
