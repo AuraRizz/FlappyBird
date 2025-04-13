@@ -1,21 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://dh6b6tbjs3g0p"]
+[gd_scene load_steps=8 format=3 uid="uid://dh6b6tbjs3g0p"]
 
 [ext_resource type="Texture2D" uid="uid://dtjr2rgdu1rfw" path="res://Mur.png" id="1_3p5r2"]
+[ext_resource type="Script" uid="uid://dfa1e2gdy6rlq" path="res://Scripts/Colisió_murs.gd" id="1_631hj"]
 [ext_resource type="Script" uid="uid://dv8p3rdmtj72j" path="res://Scripts/area_puntuació.gd" id="2_axd3w"]
+[ext_resource type="Script" uid="uid://dbiv71xda83cm" path="res://Scripts/Colisió_murs2.gd" id="3_r55nx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_631hj"]
+size = Vector2(229, 1092.86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r55nx"]
+size = Vector2(229.576, 1101.79)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_axd3w"]
 size = Vector2(85, 330.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_631hj"]
-size = Vector2(229, 733)
+[node name="Mur" type="Node2D"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r55nx"]
-size = Vector2(229.576, 724.857)
-
-[node name="Mur" type="StaticBody2D"]
-
-[node name="Mur Baix" type="Node2D" parent="."]
+[node name="Mur Baix" type="Area2D" parent="."]
 scale = Vector2(0.387672, 0.56)
+script = ExtResource("1_631hj")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Mur Baix"]
 position = Vector2(0, 714)
@@ -27,8 +30,18 @@ position = Vector2(0, 359)
 scale = Vector2(0.560547, 1)
 texture = ExtResource("1_3p5r2")
 
-[node name="Mur Dalt" type="Node2D" parent="."]
+[node name="Sprite2D4" type="Sprite2D" parent="Mur Baix"]
+position = Vector2(0, 1092.86)
+scale = Vector2(0.560547, 1)
+texture = ExtResource("1_3p5r2")
+
+[node name="Colisio Baix" type="CollisionShape2D" parent="Mur Baix"]
+position = Vector2(1.23e-06, 721.429)
+shape = SubResource("RectangleShape2D_631hj")
+
+[node name="Mur Dalt" type="Area2D" parent="."]
 scale = Vector2(0.387672, 0.56)
+script = ExtResource("3_r55nx")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Mur Dalt"]
 position = Vector2(0, -359)
@@ -40,6 +53,15 @@ position = Vector2(0, -725)
 scale = Vector2(0.56, 1)
 texture = ExtResource("1_3p5r2")
 
+[node name="Sprite2D5" type="Sprite2D" parent="Mur Dalt"]
+position = Vector2(0, -1096.43)
+scale = Vector2(0.56, 1)
+texture = ExtResource("1_3p5r2")
+
+[node name="Colisio Dalt" type="CollisionShape2D" parent="Mur Dalt"]
+position = Vector2(1.28975, -727.679)
+shape = SubResource("RectangleShape2D_r55nx")
+
 [node name="Area puntuació" type="Area2D" parent="."]
 scale = Vector2(0.692271, 1)
 script = ExtResource("2_axd3w")
@@ -49,14 +71,7 @@ position = Vector2(1.5, -1.54)
 scale = Vector2(0.56, 0.56)
 shape = SubResource("RectangleShape2D_axd3w")
 
-[node name="Colisio Baix" type="CollisionShape2D" parent="."]
-position = Vector2(4.76837e-07, 299)
-scale = Vector2(0.387672, 0.56)
-shape = SubResource("RectangleShape2D_631hj")
-
-[node name="Colisio Dalt" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -301.96)
-scale = Vector2(0.387672, 0.56)
-shape = SubResource("RectangleShape2D_r55nx")
-
+[connection signal="body_entered" from="Mur Baix" to="Mur Baix" method="_on_body_entered"]
+[connection signal="body_entered" from="Mur Dalt" to="Mur Baix" method="_on_mur_dalt_body_entered"]
+[connection signal="body_entered" from="Mur Dalt" to="Mur Dalt" method="_on_body_entered"]
 [connection signal="body_entered" from="Area puntuació" to="Area puntuació" method="_on_body_entered"]

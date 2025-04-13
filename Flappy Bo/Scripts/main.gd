@@ -5,7 +5,7 @@ extends Node2D
 @export var escena_mur = preload("res://Escenes/mur.tscn")
 
 var velocitat_scroll = 250
-var distancia_entre_murs = 300
+var distancia_entre_murs = 350
 var num_murs_inicials = 5
 
 func _ready():
@@ -32,3 +32,5 @@ func crea_mur():
 	mur.position = Vector2(nova_posicio_x, randf_range(100, 500))  
 	nous_murs.add_child(mur)
 	
+func _aturar_scroll():
+	velocitat_scroll = 0

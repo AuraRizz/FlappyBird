@@ -1,31 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd07sl0exvp7v"]
+[gd_scene load_steps=7 format=3 uid="uid://dd07sl0exvp7v"]
 
-[ext_resource type="Script" uid="uid://ctya8ra76a2pn" path="res://Escenes/main.gd" id="1_edo2l"]
+[ext_resource type="Script" uid="uid://ctya8ra76a2pn" path="res://Scripts/main.gd" id="1_edo2l"]
 [ext_resource type="PackedScene" uid="uid://dh6b6tbjs3g0p" path="res://Escenes/mur.tscn" id="1_p8wuh"]
+[ext_resource type="Texture2D" uid="uid://c1g5gju8w4ber" path="res://fons.jpg" id="2_8tc46"]
 [ext_resource type="PackedScene" uid="uid://bv5labqrx41kw" path="res://Escenes/Jugador.tscn" id="2_mwxei"]
 [ext_resource type="Script" uid="uid://ciiyg23gnfxv5" path="res://Scripts/mur.gd" id="4_hrf8d"]
+[ext_resource type="FontFile" uid="uid://dsq2cj47oskdy" path="res://lletres/04B_30__.TTF" id="4_pvylw"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_edo2l")
 
+[node name="Fons" type="Sprite2D" parent="."]
+position = Vector2(1166.79, 137)
+scale = Vector2(2.27047, 2.03133)
+texture = ExtResource("2_8tc46")
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_mwxei")]
+z_index = 1
 scale = Vector2(0.0400004, 0.0400004)
 
+[node name="Puntuació" type="Label" parent="CharacterBody2D"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -4974.95
+offset_top = -2149.98
+offset_right = -4037.95
+offset_bottom = -2034.98
+grow_horizontal = 2
+scale = Vector2(10.9999, 10.9999)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.833534, 0, 0.376025, 1)
+theme_override_fonts/font = ExtResource("4_pvylw")
+theme_override_font_sizes/font_size = 72
+text = "PUNTUACIO = 0"
+
 [node name="Nous_Murs" type="Node2D" parent="."]
+visibility_layer = 2
 
 [node name="Mur" parent="Nous_Murs" instance=ExtResource("1_p8wuh")]
 position = Vector2(300, 300)
 script = ExtResource("4_hrf8d")
 
-[node name="Puntuació" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -138.0
-offset_top = -93.0
-offset_right = 161.0
-offset_bottom = -38.0
-grow_horizontal = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 40
-text = "PUNTUACIÓ = 0"
+[node name="Sprite2D" type="Sprite2D" parent="."]
