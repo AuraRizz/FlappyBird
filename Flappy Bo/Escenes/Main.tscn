@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dd07sl0exvp7v"]
+[gd_scene load_steps=8 format=3 uid="uid://dd07sl0exvp7v"]
 
 [ext_resource type="Script" uid="uid://ctya8ra76a2pn" path="res://Scripts/main.gd" id="1_edo2l"]
 [ext_resource type="PackedScene" uid="uid://dh6b6tbjs3g0p" path="res://Escenes/mur.tscn" id="1_p8wuh"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bv5labqrx41kw" path="res://Escenes/Jugador.tscn" id="2_mwxei"]
 [ext_resource type="Script" uid="uid://ciiyg23gnfxv5" path="res://Scripts/mur.gd" id="4_hrf8d"]
 [ext_resource type="FontFile" uid="uid://dsq2cj47oskdy" path="res://lletres/04B_30__.TTF" id="4_pvylw"]
+[ext_resource type="Texture2D" uid="uid://bv5wauni4bwbu" path="res://Game over.png" id="7_kjn8y"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_edo2l")
@@ -42,4 +43,19 @@ visibility_layer = 2
 position = Vector2(300, 300)
 script = ExtResource("4_hrf8d")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Game Over" type="Sprite2D" parent="."]
+position = Vector2(-5.00003, 416.25)
+scale = Vector2(1.612, 1.612)
+texture = ExtResource("7_kjn8y")
+
+[node name="PuntuacióFinal" type="Label" parent="."]
+offset_left = -228.0
+offset_top = 601.0
+offset_right = 212.0
+offset_bottom = 642.0
+theme_override_colors/font_color = Color(0.858751, 0, 0.432484, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.992157)
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("4_pvylw")
+theme_override_font_sizes/font_size = 40
+text = "PuntuacioFinal"

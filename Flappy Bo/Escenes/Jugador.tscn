@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bv5labqrx41kw"]
+[gd_scene load_steps=6 format=3 uid="uid://bv5labqrx41kw"]
 
 [ext_resource type="Script" uid="uid://csy7ov7sob51f" path="res://Scripts/jugador.gd" id="1_0khgs"]
 [ext_resource type="Texture2D" uid="uid://bylo2bqdr5b07" path="res://Flappy-Bird-PNG-ara si.png" id="1_hx2ax"]
 [ext_resource type="Texture2D" uid="uid://c8nqbsmef0iip" path="res://Flappy-Bird-PNG-Transparent-Picture Prova 2.png" id="3_r46xu"]
-[ext_resource type="Texture2D" uid="uid://bv5wauni4bwbu" path="res://Game over.png" id="4_r46xu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ppagg"]
 animations = [{
@@ -47,8 +46,3 @@ shape = SubResource("CapsuleShape2D_0khgs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_bottom = 900
-
-[node name="Game over" type="Sprite2D" parent="."]
-position = Vector2(60, 1782)
-scale = Vector2(16.2047, 16.2047)
-texture = ExtResource("4_r46xu")
